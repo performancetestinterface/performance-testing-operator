@@ -1,4 +1,4 @@
-apiVersion: specs.my.domain/v1alpha1
+apiVersion: specs.pti-spec.io/v1alpha1
 kind: PerformanceTestRun
 metadata:
   name: performancetestrun-sample

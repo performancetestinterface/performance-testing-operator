@@ -5,7 +5,7 @@ metadata:
   name: performancetestrun-editor-role
 rules:
 - apiGroups:
-  - specs.my.domain
+  - specs.pti-spec.io
   resources:
   - performancetestruns
   verbs:
@@ -17,7 +17,7 @@ rules:
   - update
   - watch
 - apiGroups:
-  - specs.my.domain
+  - specs.pti-spec.io
   resources:
   - performancetestruns/status
   verbs:

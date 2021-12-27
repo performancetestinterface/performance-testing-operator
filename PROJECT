@@ -1,33 +1,34 @@
-domain: my.domain
+domain: pti-spec.io
 layout:
 - go.kubebuilder.io/v3
 projectName: performance-testing-operator
-repo: pti-spec.io
+repo: github.com/performancetestinterface/performance-testing-operator
 resources:
 - api:
     crdVersion: v1
     namespaced: true
-  domain: my.domain
-  group: specs
-  kind: Runner
-  path: pti-spec.io/api/v1alpha1
-  version: v1alpha1
-- api:
-    crdVersion: v1
-    namespaced: true
   controller: true
-  domain: my.domain
-  group: specs
-  kind: PerformanceTest
-  path: pti-spec.io/api/v1alpha1
-  version: v1alpha1
-- api:
-    crdVersion: v1
-    namespaced: true
-  controller: true
-  domain: my.domain
+  domain: pti-spec.io
   group: specs
   kind: PerformanceTestRun
-  path: pti-spec.io/api/v1alpha1
+  path: github.com/performancetestinterface/performance-testing-operator/api/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: pti-spec.io
+  group: specs
+  kind: PerformanceTest
+  path: github.com/performancetestinterface/performance-testing-operator/api/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: pti-spec.io
+  group: specs
+  kind: Runner
+  path: github.com/performancetestinterface/performance-testing-operator/api/v1alpha1
   version: v1alpha1
 version: "3"

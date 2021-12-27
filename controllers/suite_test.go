@@ -30,7 +30,7 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	specsv1alpha1 "pti-spec.io/api/v1alpha1"
+	specsv1alpha1 "github.com/performancetestinterface/performance-testing-operator/api/v1alpha1"
 	//+kubebuilder:scaffold:imports
 )
 

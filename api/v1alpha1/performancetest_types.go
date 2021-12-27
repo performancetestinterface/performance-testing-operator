@@ -29,14 +29,14 @@ type PerformanceTestSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of PerformanceTest. Edit performancetest_types.go to remove/update
-	Runner RunnerSpec `json:"runner,omitempty"`
+	PerformanceTestRunner PerformanceTestRunnerSpec `json:"runner"`
 }
 
-type RunnerSpec struct {
-	Name                  string `json:"name,omitempty"`
-	Replicas              int16  `json:"replicas,omitempty"`
-	TotalRequests         int16  `json:"total-requests,omitempty"`
-	QueriesPerSecondLimit int16  `json:"queries-per-second-limit,omitempty"`
+type PerformanceTestRunnerSpec struct {
+	Name                  string `json:"foo,omitempty"`
+	Replicas              int32  `json:"replicas"`
+	TotalRequests         int32  `json:"total-requests"`
+	QueriesPerSecondLimit int32  `json:"queries-per-second-limit"`
 }
 
 // PerformanceTestStatus defines the observed state of PerformanceTest

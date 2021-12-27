@@ -30,7 +30,6 @@ type RunnerSpec struct {
 
 	// Foo is an example field of Runner. Edit runner_types.go to remove/update
 	Image string `json:"image,omitempty"`
-	
 }
 
 // RunnerStatus defines the observed state of Runner

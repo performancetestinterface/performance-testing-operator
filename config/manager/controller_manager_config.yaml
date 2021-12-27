@@ -8,4 +8,4 @@ webhook:
   port: 9443
 leaderElection:
   leaderElect: true
-  resourceName: 3664d99a.my.domain
+  resourceName: 0931c6ea.pti-spec.io

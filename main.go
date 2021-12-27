@@ -31,8 +31,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/healthz"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	specsv1alpha1 "pti-spec.io/api/v1alpha1"
-	"pti-spec.io/controllers"
+	specsv1alpha1 "github.com/performancetestinterface/performance-testing-operator/api/v1alpha1"
+	"github.com/performancetestinterface/performance-testing-operator/controllers"
 	//+kubebuilder:scaffold:imports
 )
 
@@ -71,13 +71,20 @@ func main() {
 		Port:                   9443,
 		HealthProbeBindAddress: probeAddr,
 		LeaderElection:         enableLeaderElection,
-		LeaderElectionID:       "3664d99a.my.domain",
+		LeaderElectionID:       "0931c6ea.pti-spec.io",
 	})
 	if err != nil {
 		setupLog.Error(err, "unable to start manager")
 		os.Exit(1)
 	}
 
+	if err = (&controllers.PerformanceTestRunReconciler{
+		Client: mgr.GetClient(),
+		Scheme: mgr.GetScheme(),
+	}).SetupWithManager(mgr); err != nil {
+		setupLog.Error(err, "unable to create controller", "controller", "PerformanceTestRun")
+		os.Exit(1)
+	}
 	if err = (&controllers.PerformanceTestReconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),
@@ -85,11 +92,11 @@ func main() {
 		setupLog.Error(err, "unable to create controller", "controller", "PerformanceTest")
 		os.Exit(1)
 	}
-	if err = (&controllers.PerformanceTestRunReconciler{
+	if err = (&controllers.RunnerReconciler{
 		Client: mgr.GetClient(),
 		Scheme: mgr.GetScheme(),
 	}).SetupWithManager(mgr); err != nil {
-		setupLog.Error(err, "unable to create controller", "controller", "PerformanceTestRun")
+		setupLog.Error(err, "unable to create controller", "controller", "Runner")
 		os.Exit(1)
 	}
 	//+kubebuilder:scaffold:builder

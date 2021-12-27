@@ -5,7 +5,7 @@ metadata:
   name: performancetestrun-viewer-role
 rules:
 - apiGroups:
-  - specs.my.domain
+  - specs.pti-spec.io
   resources:
   - performancetestruns
   verbs:
@@ -13,7 +13,7 @@ rules:
   - list
   - watch
 - apiGroups:
-  - specs.my.domain
+  - specs.pti-spec.io
   resources:
   - performancetestruns/status
   verbs:

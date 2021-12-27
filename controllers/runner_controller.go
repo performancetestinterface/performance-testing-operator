@@ -27,26 +27,26 @@ import (
 	specsv1alpha1 "github.com/performancetestinterface/performance-testing-operator/api/v1alpha1"
 )
 
-// PerformanceTestReconciler reconciles a PerformanceTest object
-type PerformanceTestReconciler struct {
+// RunnerReconciler reconciles a Runner object
+type RunnerReconciler struct {
 	client.Client
 	Scheme *runtime.Scheme
 }
 
-//+kubebuilder:rbac:groups=specs.pti-spec.io,resources=performancetests,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=specs.pti-spec.io,resources=performancetests/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=specs.pti-spec.io,resources=performancetests/finalizers,verbs=update
+//+kubebuilder:rbac:groups=specs.pti-spec.io,resources=runners,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=specs.pti-spec.io,resources=runners/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=specs.pti-spec.io,resources=runners/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
 // TODO(user): Modify the Reconcile function to compare the state specified by
-// the PerformanceTest object against the actual cluster state, and then
+// the Runner object against the actual cluster state, and then
 // perform operations to make the cluster state reflect the state specified by
 // the user.
 //
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.10.0/pkg/reconcile
-func (r *PerformanceTestReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
+func (r *RunnerReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	_ = log.FromContext(ctx)
 
 	// TODO(user): your logic here
@@ -55,8 +55,8 @@ func (r *PerformanceTestReconciler) Reconcile(ctx context.Context, req ctrl.Requ
 }
 
 // SetupWithManager sets up the controller with the Manager.
-func (r *PerformanceTestReconciler) SetupWithManager(mgr ctrl.Manager) error {
+func (r *RunnerReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
-		For(&specsv1alpha1.PerformanceTest{}).
+		For(&specsv1alpha1.Runner{}).
 		Complete(r)
 }

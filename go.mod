@@ -1,4 +1,4 @@
-module pti-spec.io
+module github.com/performancetestinterface/performance-testing-operator
 
 go 1.16
 

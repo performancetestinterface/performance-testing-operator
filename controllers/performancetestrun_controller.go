@@ -24,7 +24,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	specsv1alpha1 "pti-spec.io/api/v1alpha1"
+	specsv1alpha1 "github.com/performancetestinterface/performance-testing-operator/api/v1alpha1"
 )
 
 // PerformanceTestRunReconciler reconciles a PerformanceTestRun object
@@ -33,9 +33,9 @@ type PerformanceTestRunReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-//+kubebuilder:rbac:groups=specs.my.domain,resources=performancetestruns,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=specs.my.domain,resources=performancetestruns/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=specs.my.domain,resources=performancetestruns/finalizers,verbs=update
+//+kubebuilder:rbac:groups=specs.pti-spec.io,resources=performancetestruns,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=specs.pti-spec.io,resources=performancetestruns/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=specs.pti-spec.io,resources=performancetestruns/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
