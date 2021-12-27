@@ -1,0 +1,24 @@
+# permissions for end users to edit performancetestruns.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: performancetestrun-editor-role
+rules:
+- apiGroups:
+  - specs.my.domain
+  resources:
+  - performancetestruns
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - specs.my.domain
+  resources:
+  - performancetestruns/status
+  verbs:
+  - get

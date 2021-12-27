@@ -1,0 +1,6 @@
+apiVersion: specs.my.domain/v1alpha1
+kind: PerformanceTest
+metadata:
+  name: performancetest-sample
+spec:
+  # TODO(user): Add fields here
