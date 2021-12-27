@@ -29,7 +29,8 @@ type RunnerSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of Runner. Edit runner_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Image string `json:"image,omitempty"`
+	
 }
 
 // RunnerStatus defines the observed state of Runner
