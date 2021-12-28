@@ -1,0 +1,6 @@
+apiVersion: specs.pti-spec.io/v1alpha1
+kind: Runner
+metadata:
+  name: runner-sample
+spec:
+  image: loadimpact/k6

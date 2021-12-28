@@ -1,0 +1,11 @@
+apiVersion: specs.pti-spec.io/v1alpha1
+kind: PerformanceTest
+metadata:
+  name: performancetest-sample
+spec:
+  runner:
+    name: runner-sample
+    replicas: 1
+    total-iterations: 100
+    queries-per-second-limit: 1
+    users: 1

@@ -1,0 +1,86 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - specs.pti-spec.io
+  resources:
+  - performancetestruns
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - specs.pti-spec.io
+  resources:
+  - performancetestruns/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - specs.pti-spec.io
+  resources:
+  - performancetestruns/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - specs.pti-spec.io
+  resources:
+  - performancetests
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - specs.pti-spec.io
+  resources:
+  - performancetests/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - specs.pti-spec.io
+  resources:
+  - performancetests/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - specs.pti-spec.io
+  resources:
+  - runners
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - specs.pti-spec.io
+  resources:
+  - runners/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - specs.pti-spec.io
+  resources:
+  - runners/status
+  verbs:
+  - get
+  - patch
+  - update
