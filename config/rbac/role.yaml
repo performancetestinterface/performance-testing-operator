@@ -84,3 +84,39 @@ rules:
   - get
   - patch
   - update
+- apiGroups:
+  - "*"
+  resources:
+  - configmaps
+  verbs:
+  - get
+  - list
+  - watch
+  - patch
+  - update
+  - create
+  - delete
+- apiGroups:
+  - "coordination.k8s.io"
+  resources:
+  - leases
+  verbs:
+  - get
+  - list
+  - watch
+  - patch
+  - update
+  - create
+  - delete
+- apiGroups:
+  - "*"
+  resources:
+  - jobs
+  verbs:
+  - get
+  - list
+  - watch
+  - patch
+  - update
+  - create
+  - delete
