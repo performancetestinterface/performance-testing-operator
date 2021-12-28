@@ -43,16 +43,12 @@ spec:
                   name:
                     type: string
                   queries-per-second-limit:
-                    format: int32
                     type: integer
                   replicas:
-                    format: int32
                     type: integer
                   total-iterations:
-                    format: int32
                     type: integer
                   users:
-                    format: int32
                     type: integer
                 required:
                 - queries-per-second-limit
