@@ -3,4 +3,4 @@ kind: Runner
 metadata:
   name: runner-sample
 spec:
-  image: loadimpact/k6
+  image: stevenfraser/podinfo-k6
