@@ -109,7 +109,7 @@ func CreateJob(logger logr.Logger, runName string, namespace string, test specsv
 	jobName := "job-" + runName
 	logger.Info("Creating Job " + jobName)
 
-	containerArgs := []string{"-u " + fmt.Sprintf("%v", test.Spec.PerformanceTestRunner.Users), "-i " + fmt.Sprintf("%v", test.Spec.PerformanceTestRunner.TotalIterations), "--rps " + fmt.Sprintf("%v", test.Spec.PerformanceTestRunner.QueriesPerSecondLimit)}
+	containerArgs := []string{"-u", fmt.Sprintf("%v", test.Spec.PerformanceTestRunner.Users), "-i", fmt.Sprintf("%v", test.Spec.PerformanceTestRunner.TotalIterations), "--rps", fmt.Sprintf("%v", test.Spec.PerformanceTestRunner.QueriesPerSecondLimit)}
 	job := batchv1.Job{
 		ObjectMeta: metav1.ObjectMeta{
 			GenerateName: runName,
