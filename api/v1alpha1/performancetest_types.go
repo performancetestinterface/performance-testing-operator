@@ -33,10 +33,11 @@ type PerformanceTestSpec struct {
 }
 
 type PerformanceTestRunnerSpec struct {
-	Name                  string `json:"foo,omitempty"`
+	Name                  string `json:"name,omitempty"`
 	Replicas              int32  `json:"replicas"`
-	TotalRequests         int32  `json:"total-requests"`
+	TotalIterations       int32  `json:"total-iterations"`
 	QueriesPerSecondLimit int32  `json:"queries-per-second-limit"`
+	Users                 int32  `json:"users"`
 }
 
 // PerformanceTestStatus defines the observed state of PerformanceTest

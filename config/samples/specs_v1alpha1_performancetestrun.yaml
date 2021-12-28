@@ -1,6 +1,6 @@
 apiVersion: specs.pti-spec.io/v1alpha1
 kind: PerformanceTestRun
 metadata:
-  name: performancetestrun-sample
+  name: performancetestrun-sample-fghft
 spec:
-  # TODO(user): Add fields here
+  performance-test: performancetest-sample

@@ -60,3 +60,7 @@ func (r *PerformanceTestReconciler) SetupWithManager(mgr ctrl.Manager) error {
 		For(&specsv1alpha1.PerformanceTest{}).
 		Complete(r)
 }
+
+// func GetPerformanceTestByName(ctx context.Context, name string) error {
+
+// }

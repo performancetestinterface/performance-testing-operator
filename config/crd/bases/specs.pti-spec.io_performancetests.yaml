@@ -40,7 +40,7 @@ spec:
                 description: Foo is an example field of PerformanceTest. Edit performancetest_types.go
                   to remove/update
                 properties:
-                  foo:
+                  name:
                     type: string
                   queries-per-second-limit:
                     format: int32
@@ -48,13 +48,17 @@ spec:
                   replicas:
                     format: int32
                     type: integer
-                  total-requests:
+                  total-iterations:
+                    format: int32
+                    type: integer
+                  users:
                     format: int32
                     type: integer
                 required:
                 - queries-per-second-limit
                 - replicas
-                - total-requests
+                - total-iterations
+                - users
                 type: object
             required:
             - runner

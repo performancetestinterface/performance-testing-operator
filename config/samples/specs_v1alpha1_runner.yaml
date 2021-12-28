@@ -3,4 +3,4 @@ kind: Runner
 metadata:
   name: runner-sample
 spec:
-  # TODO(user): Add fields here
+  image: loadimpact/k6

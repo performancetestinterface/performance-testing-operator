@@ -3,4 +3,9 @@ kind: PerformanceTest
 metadata:
   name: performancetest-sample
 spec:
-  # TODO(user): Add fields here
+  runner:
+    name: runner-sample
+    replicas: 1
+    total-iterations: 100
+    queries-per-second-limit: 1
+    users: 1
